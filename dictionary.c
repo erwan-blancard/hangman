@@ -3,6 +3,9 @@
 #include <string.h>
 #include <time.h>
 
+#include <unistd.h>
+
+
 #define EASY "facile"
 #define MEDIUM "moyen"
 #define HARD "difficile"
@@ -20,7 +23,7 @@ struct SecretWord {
 
 struct SecretWord *choose_secret_word_from_file(const char* filename, const char* difficulty, const char* category)
 {
-    printf("ARGS: File: %s | Category: %s | Difficulty: %s\n", filename, category, difficulty);
+    //printf("ARGS: File: %s | Category: %s | Difficulty: %s\n", filename, category, difficulty);
     // open file stream
     FILE *file = fopen(filename, "r");
     if (!file) {
@@ -56,7 +59,7 @@ struct SecretWord *choose_secret_word_from_file(const char* filename, const char
             printf("Error in dictionary at line %d: %s\n", lineNum, line);
         } else {
             // if the difficulty and category matches
-            printf("LINE: %s\nWord: %s | Category: %s | Difficulty: %s\n", line, wordBuff, categoryBuff, difficultyBuff);
+            //printf("LINE: %s\nWord: %s | Category: %s | Difficulty: %s\n", line, wordBuff, categoryBuff, difficultyBuff);
 
             if (strcmp(difficultyBuff, difficulty) == 0 && (category == NULL || strcmp(categoryBuff, category) == 0))
             {

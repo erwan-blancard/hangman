@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
-#include "dictionnary.h"
+#include "dictionary.h"
 
 
 void print_help();
