@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1706359347 source:c:\users\erwan blancard\documents\la plateforme\c\hangman\main.c
+1706365021 source:c:\users\erwan blancard\documents\la plateforme\c\hangman\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>

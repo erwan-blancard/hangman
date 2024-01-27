@@ -47,19 +47,26 @@ int char_in_letters_typed(char c, char* letters, int len)
 }
 
 
+void print_ui(struct GameState* state, char* userGuess)
+{
+    printf("\n");
+    printf("Category: %s | Difficulty: %s\n", state->secret_word->category, state->secret_word->difficulty);
+    printf("Guess: %s\n", userGuess);
+}
+
+
 void game_loop(struct GameState state)
 {
     int secretWordLen = strlen(state.secret_word->word);
     char userGuess[secretWordLen];
-    // fill userGuess with asterisks.
+    // copy word to userGuess
+    strcpy(userGuess, state.secret_word->word);
+
+    // fill userGuess with asterisks
     for (int i = 0; i < secretWordLen; i++)
     {
         // do not hide 1st and last letters or if current letter equals to 1st or last letter
-        if ((i == 0 || i == secretWordLen-1) || !isalpha(state.secret_word->word[i]) || (isalpha(state.secret_word->word[i]) && (state.secret_word->word[i] == state.secret_word->word[0] || state.secret_word->word[i] == state.secret_word->word[secretWordLen-1])))
-        {
-            userGuess[i] = state.secret_word->word[i];
-        }
-        else
+        if (!((i == 0 || i == secretWordLen-1) || !isalpha(state.secret_word->word[i]) || (isalpha(state.secret_word->word[i]) && (state.secret_word->word[i] == state.secret_word->word[0] || state.secret_word->word[i] == state.secret_word->word[secretWordLen-1]))))
         {
             userGuess[i] = '*';
         }
@@ -68,7 +75,7 @@ void game_loop(struct GameState state)
     int incorrectGuesses = 0;
 
     while (incorrectGuesses < 6) {
-        printf("Guess: %s\n", userGuess);
+        print_ui(&state, userGuess);
         print_letters_typed(state.letters_typed, secretWordLen);
         printf("Attempts remaining: %d\n", 6 - incorrectGuesses);
 
