@@ -1,0 +1,16 @@
+# depslib dependency file v1.0
+1706359347 source:c:\users\erwan blancard\documents\la plateforme\c\hangman\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"dictionnary.h"
+
+1706349496 c:\users\erwan blancard\documents\la plateforme\c\hangman\dictionnary.h
+
+1706353277 source:c:\users\erwan blancard\documents\la plateforme\c\hangman\dictionnary.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<time.h>
+
