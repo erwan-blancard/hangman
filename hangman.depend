@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1706370085 source:c:\users\erwan blancard\documents\la plateforme\c\hangman\main.c
+1706529622 source:c:\users\erwan blancard\documents\la plateforme\c\hangman\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -14,12 +14,12 @@
 	<string.h>
 	<time.h>
 
-1706372178 source:c:\users\erwan blancard\documents\la plateforme\c\hangman\dictionary.c
+1706530181 source:c:\users\erwan blancard\documents\la plateforme\c\hangman\dictionary.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	<time.h>
 	<unistd.h>
 
-1706367656 c:\users\erwan blancard\documents\la plateforme\c\hangman\dictionary.h
+1706529608 c:\users\erwan blancard\documents\la plateforme\c\hangman\dictionary.h
 

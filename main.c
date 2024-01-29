@@ -47,10 +47,48 @@ int char_in_letters_typed(char c, char* letters, int len)
 }
 
 
-void print_ui(struct GameState* state, char* userGuess)
+void print_ui(struct GameState* state, char* userGuess, int incorrectGuesses)
 {
     printf("\n");
     printf("Category: %s | Difficulty: %s\n", state->secret_word->category, state->secret_word->difficulty);
+
+    printf("  ----  \n");
+    printf("  |  |  \n");
+    switch(incorrectGuesses)
+    {
+    case 0:
+        printf("     |  \n");
+        printf("     |  \n");
+        printf("     |  \n");
+        break;
+    case 1:
+        printf("  0  |  \n");
+        printf("     |  \n");
+        printf("     |  \n");
+        break;
+    case 2:
+        printf("  0  |  \n");
+        printf("  |  |  \n");
+        printf("     |  \n");
+        break;
+    case 3:
+        printf("  0  |  \n");
+        printf(" /|  |  \n");
+        printf("     |  \n");
+        break;
+    case 4:
+        printf("  0  |  \n");
+        printf(" /|\\ |  \n");
+        printf("     |  \n");
+        break;
+    default:
+        printf("  0  |  \n");
+        printf(" /|\\ |  \n");
+        printf(" /   |  \n");
+        break;
+    }
+    printf("     |  \n");
+    printf("________\n");
     printf("Guess: %s\n", userGuess);
 }
 
@@ -75,7 +113,7 @@ void game_loop(struct GameState state)
     int incorrectGuesses = 0;
 
     while (incorrectGuesses < 6) {
-        print_ui(&state, userGuess);
+        print_ui(&state, userGuess, incorrectGuesses);
         print_letters_typed(state.letters_typed, secretWordLen);
         printf("Attempts remaining: %d\n", 6 - incorrectGuesses);
 
@@ -111,6 +149,13 @@ void game_loop(struct GameState state)
     }
 
     if (incorrectGuesses == 6) {
+        printf("\n  ----  \n");
+        printf("  |  |  \n");
+        printf("  0  |  \n");
+        printf(" /|\\ |  \n");
+        printf(" / \\ |  \n");
+        printf("     |  \n");
+        printf("________\n");
         printf("\nGame Over! The secret word was: \"%s\".\n", state.secret_word->word);
     }
 

@@ -37,13 +37,17 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Unit filename="dictionnary.c">
+		<Unit filename="dictionary.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="dictionnary.h" />
+		<Unit filename="dictionary.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Extensions />
+		<Extensions>
+			<debugger>
+				<search_path add="C:\devkitPro\msys2\mingw64\bin" />
+			</debugger>
+		</Extensions>
 	</Project>
 </CodeBlocks_project_file>
